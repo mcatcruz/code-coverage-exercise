@@ -42,3 +42,19 @@ def test_get_student_with_more_classes():
     )
 
     # TODO: write assertions
+    assert get_student_with_more_classes(charles, ada) == ada
+
+# Original copy doesn't cover line 8 of student.py, so created a new test.
+def test_get_student_with_zero_classes():
+    monica = Student(name = "Monica Cruz", level = "senior", courses=[])
+    assert len(monica.courses) == 0
+
+# Original copy doesn't cover line 22 of student.py
+def test_get_student_a_has_more_classes():
+    charles = Student("Charles Babbage", "senior", ["mechanical engineering", "mathematics", "foundations of computing"])
+    ada = Student(
+        "Ada Lovelace",
+        "sophomore",
+        ["mathematics", "foundations of computing"]
+    )
+    assert get_student_with_more_classes(charles, ada) == charles
